@@ -6,14 +6,14 @@ public class CameraControl : MonoBehaviour
 
     private void FixedUpdate()
     {
-		transform.position = m_Target.position;
-		transform.rotation = m_Target.rotation;
+//		transform.position = m_Target.position;
+//		transform.rotation = m_Target.rotation;
     }
 
 
     public void SetStartPositionAndSize()
     {
-		transform.position = m_Target.position;
-		transform.rotation = m_Target.rotation;
+//		transform.position = m_Target.position;
+//		transform.rotation = m_Target.rotation;
 	}
 }

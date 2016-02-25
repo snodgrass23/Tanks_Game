@@ -1,6 +1,6 @@
-﻿using UnityEngine;
+using UnityEngine;
 
-public class TankMovement : MonoBehaviour
+public class TankMovementPlayer : MonoBehaviour
 {
     public int m_PlayerNumber = 1;         
     public float m_Speed = 12f;            
@@ -42,9 +42,9 @@ public class TankMovement : MonoBehaviour
 
     private void Start()
     {
-//		m_ForwardMovementAxisName = "RightTrigger";
-//		m_ReverseMovementAxisName = "LeftTrigger";
-//        m_TurnAxisName = "Horizontal" + m_PlayerNumber;
+		m_ForwardMovementAxisName = "RightTrigger";
+		m_ReverseMovementAxisName = "LeftTrigger";
+        m_TurnAxisName = "Horizontal" + m_PlayerNumber;
 
         m_OriginalPitch = m_MovementAudio.pitch;
     }
@@ -53,11 +53,11 @@ public class TankMovement : MonoBehaviour
 	// Store the player's input and make sure the audio for the engine is playing.
     private void Update()
     {
-//		m_MovementInputValue = Input.GetAxis (m_ForwardMovementAxisName);
-//		if (m_MovementInputValue < 0.1f)
-//			m_MovementInputValue = Input.GetAxis (m_ReverseMovementAxisName) * -1.0f;
-//
-//		m_TurnInputValue = Input.GetAxis (m_TurnAxisName);
+		m_MovementInputValue = Input.GetAxis (m_ForwardMovementAxisName);
+		if (m_MovementInputValue < 0.1f)
+			m_MovementInputValue = Input.GetAxis (m_ReverseMovementAxisName) * -1.0f;
+
+		m_TurnInputValue = Input.GetAxis (m_TurnAxisName);
 
 		EngineAudio ();
     }
@@ -88,22 +88,22 @@ public class TankMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-//		Move ();
-//		Turn ();
+		Move ();
+		Turn ();
     }
 
 
-//    private void Move()
-//    {
-//		Vector3 movement = transform.forward * m_MovementInputValue * m_Speed * Time.deltaTime;
-//		m_Rigidbody.MovePosition (m_Rigidbody.position + movement);
-//    }
-//
-//
-//    private void Turn()
-//    {
-//		float turn = m_TurnInputValue * m_TurnSpeed * Time.deltaTime;
-//		Quaternion turnRotation = Quaternion.Euler (0f, turn, 0f);
-//		m_Rigidbody.MoveRotation (m_Rigidbody.rotation * turnRotation);
-//    }
+    private void Move()
+    {
+		Vector3 movement = transform.forward * m_MovementInputValue * m_Speed * Time.deltaTime;
+		m_Rigidbody.MovePosition (m_Rigidbody.position + movement);
+    }
+
+
+    private void Turn()
+    {
+		float turn = m_TurnInputValue * m_TurnSpeed * Time.deltaTime;
+		Quaternion turnRotation = Quaternion.Euler (0f, turn, 0f);
+		m_Rigidbody.MoveRotation (m_Rigidbody.rotation * turnRotation);
+    }
 }
