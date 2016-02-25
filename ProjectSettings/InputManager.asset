@@ -182,7 +182,7 @@ InputManager:
     axis: 0
     joyNum: 1
   - serializedVersion: 3
-    m_Name: RightTrigger0
+    m_Name: RightTrigger
     descriptiveName: right trigger input
     descriptiveNegativeName: 
     negativeButton: 
@@ -214,7 +214,7 @@ InputManager:
     axis: 0
     joyNum: 1
   - serializedVersion: 3
-    m_Name: LeftTrigger0
+    m_Name: LeftTrigger
     descriptiveName: left trigger input
     descriptiveNegativeName: 
     negativeButton: 
