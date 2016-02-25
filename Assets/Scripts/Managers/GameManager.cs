@@ -11,7 +11,8 @@ public class GameManager : MonoBehaviour
     public CameraControl m_CameraControl;   
     public Text m_MessageText;              
     public GameObject m_TankPrefab;         
-    public TankManager[] m_Tanks;           
+    public TankManager[] m_Tanks;
+	public GameObject PlayerTank;
 
 
     private int m_RoundNumber;              
@@ -27,7 +28,7 @@ public class GameManager : MonoBehaviour
         m_EndWait = new WaitForSeconds(m_EndDelay);
 
         SpawnAllTanks();
-        SetCameraTargets();
+        SetCameraTarget();
 
         StartCoroutine(GameLoop());
     }
@@ -45,16 +46,9 @@ public class GameManager : MonoBehaviour
     }
 
 
-    private void SetCameraTargets()
+    private void SetCameraTarget()
     {
-        Transform[] targets = new Transform[m_Tanks.Length];
-
-        for (int i = 0; i < targets.Length; i++)
-        {
-            targets[i] = m_Tanks[i].m_Instance.transform;
-        }
-
-        m_CameraControl.m_Targets = targets;
+		m_CameraControl.m_Target = PlayerTank.transform;
     }
 
 
