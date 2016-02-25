@@ -22,8 +22,8 @@ public class CameraControl : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Move();
-        Zoom();
+//        Move();
+//        Zoom();
     }
 
 
@@ -95,10 +95,10 @@ public class CameraControl : MonoBehaviour
 
     public void SetStartPositionAndSize()
     {
-        FindAveragePosition();
-
-        transform.position = m_DesiredPosition;
-
-        m_Camera.orthographicSize = FindRequiredSize();
+//        FindAveragePosition();
+//
+//        transform.position = m_DesiredPosition;
+//
+//        m_Camera.orthographicSize = FindRequiredSize();
     }
 }
