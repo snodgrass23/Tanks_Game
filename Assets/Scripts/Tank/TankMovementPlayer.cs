@@ -54,6 +54,7 @@ public class TankMovementPlayer : MonoBehaviour
     private void Update()
     {
 		m_MovementInputValue = Input.GetAxis (m_ForwardMovementAxisName);
+		
 		if (m_MovementInputValue < 0.1f)
 			m_MovementInputValue = Input.GetAxis (m_ReverseMovementAxisName) * -1.0f;
 
@@ -102,6 +103,7 @@ public class TankMovementPlayer : MonoBehaviour
 
     private void Turn()
     {
+//		if (m_MovementInputValue < 0f) turnRotation = turnRotation *
 		float turn = m_TurnInputValue * m_TurnSpeed * Time.deltaTime;
 		Quaternion turnRotation = Quaternion.Euler (0f, turn, 0f);
 		m_Rigidbody.MoveRotation (m_Rigidbody.rotation * turnRotation);
